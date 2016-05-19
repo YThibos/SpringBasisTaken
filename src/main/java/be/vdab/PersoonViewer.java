@@ -1,20 +1,34 @@
 package be.vdab;
 
+import java.io.IOException;
 import java.util.List;
 
 import be.vdab.entities.Persoon;
+import be.vdab.services.PersoonService;
 
 public class PersoonViewer {
 
 	// private boolean aantalKinderenTonen;
 
 	private final PersoonEigenschap[] eigenschappen;
+	private final PersoonService persoonService;
 
-	public PersoonViewer(PersoonEigenschap[] eigenschappen) {
+	public PersoonViewer(PersoonEigenschap[] eigenschappen, PersoonService persoonService) {
 		this.eigenschappen = eigenschappen;
+		this.persoonService = persoonService;
 	}
 
-	public void afbeelden(List<Persoon> personen) {
+	public void afbeelden() throws IOException {
+		for (Persoon persoon : persoonService.findAll()) {
+			for (PersoonEigenschap eigenschap : eigenschappen) {
+				toonEigenschap(persoon, eigenschap);
+				System.out.print(' ');
+			}
+			System.out.println();
+		}
+	}
+
+	public void afbeeldenDeprecated(List<Persoon> personen) {
 
 		// personen.stream().forEach((Persoon p) -> {
 		// System.out.print(String.format("(%d): %s %s", p.getPersoonNr(),

@@ -26,9 +26,13 @@ public class Main {
 		try (ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("container.xml")) {
 			PersoonViewer viewer = context.getBean("persoonViewer", PersoonViewer.class);
 			
-			viewer.afbeelden(personen);
+			viewer.afbeelden();
+			
 		}
-	
+		catch (Exception ex) {
+			System.out.println(ex);
+		}
+		
 	}
 
 }
