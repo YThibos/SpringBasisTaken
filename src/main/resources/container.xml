@@ -17,5 +17,12 @@ http://www.springframework.org/schema/beans/spring-beans.xsd'>
 			</list>
 		</constructor-arg>
 	</bean>
+	
+	<bean id="csvPersoonRepository" class="be.vdab.repositories.CSVPersoonRepository">
+		<constructor-arg value="csvfile" />	
+	</bean>
+	<bean id="multilinePersoonRepository" class="be.vdab.repositories.MultilinePersoonRepository">
+		<constructor-arg value="multilinefile" />	
+	</bean>
 
 </beans>
