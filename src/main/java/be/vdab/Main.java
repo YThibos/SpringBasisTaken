@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import be.vdab.entities.Persoon;
+import be.vdab.presentation.PersoonViewer;
 
 public class Main {
 	

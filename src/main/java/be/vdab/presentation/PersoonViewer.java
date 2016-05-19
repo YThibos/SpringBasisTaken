@@ -1,9 +1,10 @@
-package be.vdab;
+package be.vdab.presentation;
 
 import java.io.IOException;
 import java.util.List;
 
 import be.vdab.entities.Persoon;
+import be.vdab.enums.PersoonEigenschap;
 import be.vdab.services.PersoonService;
 
 public class PersoonViewer {
