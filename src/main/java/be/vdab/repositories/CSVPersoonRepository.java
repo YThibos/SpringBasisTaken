@@ -9,11 +9,11 @@ import java.util.Scanner;
 
 import be.vdab.entities.Persoon;
 
-public class CSVPersoonRepository implements PersoonRepository {
+class CSVPersoonRepository implements PersoonRepository {
 	
 	private final File file;
 	
-	public CSVPersoonRepository(File file) {
+	CSVPersoonRepository(File file) {
 		this.file = file;
 	}
 

@@ -3,10 +3,14 @@ package be.vdab;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import be.vdab.entities.Persoon;
 import be.vdab.presentation.PersoonViewer;
+import be.vdab.presentation.PresentationConfig;
+import be.vdab.repositories.RepositoriesConfig;
+import be.vdab.services.ServicesConfig;
 
 public class Main {
 	
@@ -24,9 +28,10 @@ public class Main {
 		personen.add(p3);
 		personen.add(p4);
 		
-		try (ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("container.xml")) {
-			PersoonViewer viewer = context.getBean("persoonViewer", PersoonViewer.class);
+		try (AnnotationConfigApplicationContext context = 
+				new AnnotationConfigApplicationContext(ServicesConfig.class, RepositoriesConfig.class, PresentationConfig.class)) {
 			
+			PersoonViewer viewer = context.getBean("persoonViewer", PersoonViewer.class);
 			viewer.afbeelden();
 			
 		}

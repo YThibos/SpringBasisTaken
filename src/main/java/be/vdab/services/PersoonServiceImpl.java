@@ -6,11 +6,11 @@ import java.util.List;
 import be.vdab.entities.Persoon;
 import be.vdab.repositories.PersoonRepository;
 
-public class PersoonServiceImpl implements PersoonService {
+class PersoonServiceImpl implements PersoonService {
 
 	private final PersoonRepository persoonRepo;
 	
-	public PersoonServiceImpl(PersoonRepository persoonRepo) {
+	PersoonServiceImpl(PersoonRepository persoonRepo) {
 		this.persoonRepo = persoonRepo;
 	}
 	

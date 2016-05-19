@@ -8,11 +8,11 @@ import java.util.Scanner;
 
 import be.vdab.entities.Persoon;
 
-public class MultilinePersoonRepository implements PersoonRepository {
+class MultilinePersoonRepository implements PersoonRepository {
 
 	private final File file;
 
-	public MultilinePersoonRepository(File file) {
+	MultilinePersoonRepository(File file) {
 		this.file = file;
 	}
 
@@ -38,6 +38,7 @@ public class MultilinePersoonRepository implements PersoonRepository {
 
 		} catch (Exception ex) {
 			System.out.println("Kapot:" + ex);
+			System.out.println(file.getAbsolutePath());
 			return new ArrayList<>();
 		}
 
